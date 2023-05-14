@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -23,8 +23,30 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.once(Events.ClientReady, () => {
-	console.log('Ready!');
+// Status for the bot when he is online
+let status = [
+	{
+		name: "/ping",
+		type: ActivityType.Playing
+	},
+	{
+		name: "/server",
+		type: ActivityType.Playing
+	},
+	{
+		name: "/user",
+		type: ActivityType.Playing
+	},
+]
+
+client.once(Events.ClientReady, (c) => {
+	console.log(`${c.user.tag} is online.`);
+
+	// Intervals status which can be changes every 10s
+	setInterval(() => {
+		let random = Math.floor(Math.random() * status.length);
+		client.user.setActivity(status[random]);
+	}, 10000)
 });
 
 client.on(Events.InteractionCreate, async interaction => {
