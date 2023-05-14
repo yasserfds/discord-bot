@@ -12,5 +12,8 @@
   "dependencies": {
     "discord.js": "^14.11.0",
     "eslint": "^8.40.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
