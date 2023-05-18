@@ -69,14 +69,4 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
-(async () => {
-	mongoose.set('strictQuery', false)
-	try {
-		await mongoose.connect(process.env.MONGODB_URI, {keepAlive: true});
-		console.log("Connected to DB");
-	} catch (error) {
-		console.log(`Error: ${error}`)
-	}
-})();
-
 client.login(token);
