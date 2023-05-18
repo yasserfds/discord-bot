@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const { token } = require('./config.json');
+const mongoose = require('mongoose');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -67,5 +68,15 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
+
+(async () => {
+	mongoose.set('strictQuery', false)
+	try {
+		await mongoose.connect(process.env.MONGODB_URI, {keepAlive: true});
+		console.log("Connected to DB");
+	} catch (error) {
+		console.log(`Error: ${error}`)
+	}
+})();
 
 client.login(token);
