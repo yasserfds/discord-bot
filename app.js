@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const { token, MongoDB_URI } = require('./config.json');
-const mongoose = require('mongoose');
+const { default: mongoose } = require('mongoose');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -69,4 +69,9 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
-client.login(token);
+(async () => {
+	await mongoose.connect(MongoDB_URI);
+	console.log('Connected to the Database')
+	
+	client.login(token);
+})();
