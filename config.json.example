@@ -1,0 +1,6 @@
+{
+    "token": "<YOUR_BOT_TOKEN_GOES_HERE>"
+    "clientId": "<YOUR_CLIENT_ID_GOES_HERE>"
+    "guildId": "<YOUR_GUILD_ID_GOES_HERE>"
+    "mongoDB_URI": "<YOUR_MONGODB_URI_LINK_GOES_HERE>"
+}
