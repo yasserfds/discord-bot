@@ -1,4 +1,4 @@
-The bot used in the [Runaway Discord Server](https://discord.gg/p4rJ9TrJUa)
+The bot used in the [Autosoft Discord Server](https://discord.gg/p4rJ9TrJUa)
 
 ### How to use this bot
 
