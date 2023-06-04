@@ -1,4 +1,9 @@
-const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} = require('discord.js');
+const { Client, 
+        Interaction, 
+        ApplicationCommandOptionType, 
+        PermissionFlagsBits,
+        AttachmentBuilder
+    } = require('discord.js');
 const calculateLevelXp = require('../../utils/calculateLevelXp');
 const Level = require('../../models/Level');
 const canvacord = require('canvacord');
@@ -54,7 +59,14 @@ module.exports = {
             .setLevel(fetchedLevel.level)
             .setCurrentXP(fetchedLevel.xp)
             .setRequiredXP(calculateLevelXp(fetchedLevel.level))
-            .setStatus()
+            .setStatus(targetUserObj.presence.status)
+            .setProgressBar('#FFC300', 'COLOR')
+            .setUsername(targetUserObj.user.username)
+            .setDiscriminator(targetUserObj.user.discriminator);
+
+            const data = await rank.build();
+            const attachment = new AttachmentBuilder(data);
+            interaction.editReply({ files: [attachment] });
     },
 
     name: 'level',
