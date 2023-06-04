@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "canvacord": "^5.4.9",
     "discord.js": "^14.11.0",
     "djs-commander": "^0.0.47",
     "dotenv": "^16.0.3",
