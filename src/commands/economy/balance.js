@@ -16,7 +16,7 @@ module.exports = {
      * 
      * @param {Client} client 
      * @param {Interaction} interaction 
-     */
+    */
 
     callback: async (client, interaction) => {
         if (!interaction.inGuild()) {
