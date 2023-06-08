@@ -1,6 +1,24 @@
 const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} = require('discord.js');
 
 module.exports = {
+  name: 'ban',
+  description: 'Bans a member from this server.',
+  options: [
+    {
+      name: 'target-user',
+      description: 'The user you want to ban.',
+      type: ApplicationCommandOptionType.Mentionable,
+      required: true,
+    },
+    {
+      name: 'reason',
+      description: 'The reason you want to ban.',
+      type: ApplicationCommandOptionType.String,
+    },
+  ],
+  permissionsRequired: [PermissionFlagsBits.BanMembers],
+  botPermissions: [PermissionFlagsBits.BanMembers],
+
   /**
    *
    * @param {Client} client
@@ -56,22 +74,4 @@ module.exports = {
       console.log(`There was an error when banning: ${error}`);
     }
   },
-
-  name: 'ban',
-  description: 'Bans a member from this server.',
-  options: [
-    {
-      name: 'target-user',
-      description: 'The user you want to ban.',
-      type: ApplicationCommandOptionType.Mentionable,
-      required: true,
-    },
-    {
-      name: 'reason',
-      description: 'The reason you want to ban.',
-      type: ApplicationCommandOptionType.String,
-    },
-  ],
-  permissionsRequired: [PermissionFlagsBits.BanMembers],
-  botPermissions: [PermissionFlagsBits.BanMembers],
 };
