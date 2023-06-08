@@ -1,6 +1,25 @@
 const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} = require('discord.js');
   
   module.exports = {
+
+  name: 'kick',
+  description: 'Kicks a member from this server.',
+  options: [
+    {
+      name: 'target-user',
+      description: 'The user you want to kick.',
+      type: ApplicationCommandOptionType.Mentionable,
+      required: true,
+    },
+    {
+      name: 'reason',
+      description: 'The reason you want to kick.',
+      type: ApplicationCommandOptionType.String,
+    },
+  ],
+  permissionsRequired: [PermissionFlagsBits.KickMembers],
+  botPermissions: [PermissionFlagsBits.KickMembers],
+
     /**
      *
      * @param {Client} client
@@ -56,22 +75,4 @@ const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} =
         console.log(`There was an error when kicking: ${error}`);
       }
     },
-  
-    name: 'kick',
-    description: 'Kicks a member from this server.',
-    options: [
-      {
-        name: 'target-user',
-        description: 'The user you want to kick.',
-        type: ApplicationCommandOptionType.Mentionable,
-        required: true,
-      },
-      {
-        name: 'reason',
-        description: 'The reason you want to kick.',
-        type: ApplicationCommandOptionType.String,
-      },
-    ],
-    permissionsRequired: [PermissionFlagsBits.KickMembers],
-    botPermissions: [PermissionFlagsBits.KickMembers],
 };
