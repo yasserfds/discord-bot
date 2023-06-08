@@ -20,10 +20,10 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.BanMembers],
 
   /**
-   *
-   * @param {Client} client
-   * @param {Interaction} interaction
-   */
+    *
+    * @param {Client} client
+    * @param {Interaction} interaction
+  */
 
   callback: async (client, interaction) => {
     const targetUserId = interaction.options.get('target-user').value;
