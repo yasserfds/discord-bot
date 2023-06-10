@@ -4,7 +4,6 @@ const User = require('../../models/User');
 module.exports = {
     name: 'balance',
     description: "See yours/someone else's balance.",
-    deleted: true,
     options: [
         {
             name: 'user',

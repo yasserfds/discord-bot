@@ -6,8 +6,7 @@ const dailyAmount = 1000;
 module.exports = {
     name: 'daily',
     description: "Collect your dailies",
-    deleted: true,
-
+    
     /**
      * 
      * @param {Client} client 

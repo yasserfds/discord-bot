@@ -4,7 +4,6 @@ const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} =
 
   name: 'kick',
   description: 'Kicks a member from this server.',
-  deleted: true,
   options: [
     {
       name: 'target-user',

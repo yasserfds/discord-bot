@@ -73,7 +73,6 @@ const {
   
     name: 'level',
     description: "Shows your/someone's level.",
-    deleted: true,
     options: [
       {
         name: 'target-user',

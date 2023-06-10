@@ -3,7 +3,6 @@ const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} =
 module.exports = {
   name: 'ban',
   description: 'Bans a member from this server.',
-  deleted: true,
   options: [
     {
       name: 'target-user',
