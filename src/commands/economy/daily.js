@@ -1,13 +1,11 @@
 const { Client, Interaction } = require('discord.js');
 const User = require('../../models/User');
 
-const dailyAmount = 1000;
+const dailyAmount = 50;
 
 module.exports = {
   name: 'daily',
   description: 'Collect your dailies!',
-  devOnly: true,
-  testOnly: true,
   /**
    *
    * @param {Client} client

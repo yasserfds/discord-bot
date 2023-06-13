@@ -4,8 +4,6 @@ const User = require('../../models/User');
 module.exports = {
     name: 'balance',
     description: "See yours/someone else's balance",
-    testOnly: true,
-    devOnly: true,
     options: [
       {
         name: 'user',
