@@ -2,16 +2,6 @@ const { Client, Interaction, ApplicationCommandOptionType } = require('discord.j
 const User = require('../../models/User');
 
 module.exports = {
-    name: 'balance',
-    description: "See yours/someone else's balance",
-    options: [
-      {
-        name: 'user',
-        description: 'The user whose balance you want to get.',
-        type: ApplicationCommandOptionType.User,
-      },
-    ],
-
   /**
    *
    * @param {Client} client
@@ -43,4 +33,14 @@ module.exports = {
         : `<@${targetUserId}>'s balance is **${user.balance}**`
     );
   },
+
+  name: 'balance',
+  description: "See yours/someone else's balance",
+  options: [
+    {
+      name: 'user',
+      description: 'The user whose balance you want to get.',
+      type: ApplicationCommandOptionType.User,
+    },
+  ],
 };
