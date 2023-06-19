@@ -2,9 +2,9 @@ module.exports = {
   name: 'ping',
   description: 'Pong!',
   // devOnly: Boolean,
-  testOnly: true,
+  // testOnly: true,
   // options: Object[],
-  deleted: false,
+  // deleted: false,
 
   callback: async (client, interaction) => {
     await interaction.deferReply();
