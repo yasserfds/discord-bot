@@ -4,6 +4,10 @@ let status = [
     {
         name: 'Youtube',
         type: ActivityType.Watching
+    },
+    {
+        name: 'Commands',
+        type: ActivityType.Playing
     }
 ]
 
