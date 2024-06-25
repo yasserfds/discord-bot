@@ -1,11 +1,11 @@
-const { Client, Interaction } = require('discord.js');
-const User = require('../../models/User');
+const { Client, Interaction } = require("discord.js");
+const User = require("../../models/User");
 
 const dailyAmount = 1000;
 
 module.exports = {
-  name: 'daily',
-  description: 'Collect your dailies!',
+  name: "daily",
+  description: "Collect your dailies!",
   /**
    *
    * @param {Client} client
@@ -14,7 +14,7 @@ module.exports = {
   callback: async (client, interaction) => {
     if (!interaction.inGuild()) {
       interaction.reply({
-        content: 'You can only run this command inside a server.',
+        content: "You can only run this command inside a server.",
         ephemeral: true,
       });
       return;
@@ -36,11 +36,11 @@ module.exports = {
 
         if (lastDailyDate === currentDate) {
           interaction.editReply(
-            'You have already collected your dailies today. Come back tomorrow!'
+            "You have already collected your dailies today. Come back tomorrow!"
           );
           return;
         }
-        
+
         user.lastDaily = new Date();
       } else {
         user = new User({

@@ -1,18 +1,23 @@
-const {Client, Interaction, ApplicationCommandOptionType, PermissionFlagsBits} = require('discord.js');
+const {
+  Client,
+  Interaction,
+  ApplicationCommandOptionType,
+  PermissionFlagsBits,
+} = require("discord.js");
 
 module.exports = {
-  name: 'ban',
-  description: 'Bans a member from this server.',
+  name: "ban",
+  description: "Bans a member from this server.",
   options: [
     {
-      name: 'target-user',
-      description: 'The user you want to ban.',
+      name: "target-user",
+      description: "The user you want to ban.",
       type: ApplicationCommandOptionType.Mentionable,
       required: true,
     },
     {
-      name: 'reason',
-      description: 'The reason you want to ban.',
+      name: "reason",
+      description: "The reason you want to ban.",
       type: ApplicationCommandOptionType.String,
     },
   ],
@@ -20,15 +25,15 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.BanMembers],
 
   /**
-    *
-    * @param {Client} client
-    * @param {Interaction} interaction
-  */
+   *
+   * @param {Client} client
+   * @param {Interaction} interaction
+   */
 
   callback: async (client, interaction) => {
-    const targetUserId = interaction.options.get('target-user').value;
+    const targetUserId = interaction.options.get("target-user").value;
     const reason =
-      interaction.options.get('reason')?.value || 'No reason provided';
+      interaction.options.get("reason")?.value || "No reason provided";
 
     await interaction.deferReply();
 
