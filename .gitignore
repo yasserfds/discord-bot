@@ -1,2 +1,25 @@
-node_modules
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment variable files
 .env
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore directories for test coverage reports
+coverage/
+
+# Ignore build directories and files
+build/
+dist/
+
+# Ignore temporary files created by editors
+*.swp
+*.swo
+*.DS_Store
+.idea/
+.vscode/
+*.log
